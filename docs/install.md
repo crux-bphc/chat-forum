@@ -20,9 +20,9 @@ __
 -  this opens the 'index.php', i.e. the home page of the discussion forum.
 
  ### Import your database
-- __ type localhost/phpmyadmin
-- __ Click on the database tab and create a new database.
-- __ Import the database from the schema folder in this databse.
+-  type localhost/phpmyadmin
+-  Click on the database tab and create a new database.
+-  Import the database from the schema folder in this databse.
 
  ### Forum
 -  The main page shows you all the topics already created (index.php)
