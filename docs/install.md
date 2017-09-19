@@ -1,6 +1,8 @@
+---
 #Discussion Forum
+__
 ##Install Guide
-
+---
  ###Server Installation
 - Download the latest version of WAMP/XAMPP server.
 - Install it through the wizard.
