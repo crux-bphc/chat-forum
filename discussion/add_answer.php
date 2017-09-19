@@ -36,6 +36,7 @@ echo "<a href='view_topic.php?id=".$id."'>View your answer</a>";
 $tbl_name2="fquestions";
 $sql3="UPDATE $tbl_name2 SET reply='$Max_id' WHERE id='$id'";
 $result3=mysql_query($sql3);
+  
 }
 else {
 echo "ERROR";
