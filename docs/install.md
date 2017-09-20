@@ -1,33 +1,37 @@
 ---
 # Discussion Forum
 
-## Install Guide
+This forum lets you to keep your views on certain topics, create your own ones or just simply read the discussions.
+
+> ## Install Guide
 ---
- ### Server Installation
-- Download the latest version of WAMP/XAMPP server.
-- Install it through the wizard.
+>> ### Server Installation
+- __[Download](http://www.wampserver.com/en/) **WAMP** for Windows.
+- __[Download](https://www.mamp.info/en/downloads/) **MAMP** for Mac OS X.
+*OR*
+- __[Download](https://www.apachefriends.org/download.html) **XAMPP**. This server works on both Windows and MAC.
+- Install them through the wizard.
 
- ### Files Setup
--  open C:\ > wamp > www
--  clone this repository here
+>> ### Files Setup
+-  Open your web-server root
+- CLone the repository using `git clone https://github.com/ayushiaks/chat-forum.git`
 -  The discussion folder contains all the PHP code for the webpages in the forum.
--  The schema folder contains the database used for the discussion forum
--  The config folder coyains the php file which links all the webpages to the databse in schema
+-  The schema folder contains the database used for the discussion forum.
+-  The config folder contains the PHP file which links all the webpages to the database in schema.
 
- ### localhost
--  Open your Browser and type localhost
--  Click on the folder 'chat-forum'
--  this opens the 'index.php', i.e. the home page of the discussion forum.
+>> ### localhost
+-  Type `localhost` in your browser.
+-  Click on the `chat-forum` link.
+   (This opens the `index.php` file, i.e. the home page of the discussion forum.)
 
- ### Import your database
--  type localhost/phpmyadmin
+>> ### Import your database
+-  Type `localhost/phpmyadmin` in your browser.
 -  Click on the database tab and create a new database.
--  Import the database from the schema folder in this databse.
+-  Import the database from the schema folder in this database.
 
- ### Forum
--  The main page shows you all the topics already created (index.php)
--  To create a new topic, click on the link given at the right bottom of the page, which opens a new page (new_topic.php).
--  Add the topic name, details, your name and Email to create the topic of your choice (form action = 'add_new_topic.php').
--  Now your topic appears on the amin page. click on it to view the replies, or to write any answer.
--  The following page shows the details of the topic. To discuss about the topic, write your answer in the input form (add_answer.php).
+>> ### Forum
+-  The main page shows you all the topics already created (`index.php`).
+-  To create a new topic, click on the link given at the right bottom of the page, which opens a new page (`new_topic.php`).
+-  Add the topic name, details, your name and Email to create the topic of your choice (`<form action = 'add_new_topic.php'>`).
+-  Now your topic appears on the main page. Click on it to view the details of the topic, the replies, or to write any answer (`add_answer.php`).
 -  The main page now shows all the topics, the number of replies and views of each topic.
