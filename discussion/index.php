@@ -30,8 +30,6 @@ while($rows = mysql_fetch_array($result)){
 	<td align="center" bgcolor="#FFFFFF"><?php echo $rows['reply']; ?></td>
 	<td align="center" bgcolor="#FFFFFF"><?php echo $rows['datetime']; ?></td>
 </tr>
- 
-	
 <?php
 // Exit looping and close connection 
 }
