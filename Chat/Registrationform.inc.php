@@ -2,6 +2,8 @@
 
 include 'core.inc.php';
 
+$var = mysqli_connect("localhost", "root", "");
+
 if(!loggedin())
 {
 	if(isset($_POST['username']) &&
@@ -11,12 +13,12 @@ if(!loggedin())
 		isset($_POST['lastname']) &&
 		isset($_POST['email_id']))
 	{
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$retyped_password = $_POST['retyped_password'];
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$email_id = $_POST['email_id'];
+		$username = mysqli_real_escape_string($var,$_POST['username']);
+		$password = mysqli_real_escape_string($var,$_POST['password']);
+		$retyped_password = mysqli_real_escape_string($var,$_POST['retyped_password']);
+		$firstname = mysqli_real_escape_string($var,$_POST['firstname']);
+		$lastname = mysqli_real_escape_string($var,$_POST['lastname']);
+		$email_id = mysqli_real_escape_string($var,$_POST['email_id']);
 
 		if(!empty($_POST['username']) &&
 			!empty($_POST['password']) &&
@@ -31,27 +33,27 @@ if(!loggedin())
 			}
 			else
 			{
-				$query = " SELECT `id` FROM `user_data` WHERE `user_name` = '$username' ";
-				$query_run = mysql_query($query);
+				$query = " SELECT `id` FROM `users`.`user_data` WHERE `user_name` = '$username' ";
+				$query_run = mysqli_query($var,$query);
 				
-				if(mysql_num_rows($query_run) == 1)
+				if(mysqli_num_rows($query_run) == 1)
 				{
 					$error_msg2 = 'username already exists';
 				}
 				else
 				{
-					$query = "INSERT INTO `user_data` VALUES('','".mysql_real_escape_string($username)."',
-															    '".mysql_real_escape_string($password)."',
-															    '".mysql_real_escape_string($firstname)."',
-															    '".mysql_real_escape_string($lastname)."',
-															    '".mysql_real_escape_string($email_id)."')  ";
-					if($query_run = mysql_query($query))
+					$query = "INSERT INTO `users`.`user_data` VALUES('','".mysqli_real_escape_string($var,$username)."',
+															    '".mysqli_real_escape_string($var,$password)."',
+															    '".mysqli_real_escape_string($var,$firstname)."',
+															    '".mysqli_real_escape_string($var,$lastname)."',
+															    '".mysqli_real_escape_string($var,$email_id)."')  ";
+					if($query_run = mysqli_query($var,$query))
 					{
-						header('Location: message.php');
+						header('Location: index.php');
 					}
 					else
 					{
-						echo 'there was a problem while registering, please try again later';
+						die(mysqli_error($var));
 					}
 				}
 			}
@@ -83,7 +85,7 @@ if(!loggedin())
 				<h1>
 					Sign Up
 				</h1><br><br>
-				<form action="<?php echo $current_file; ?>" method="POST">
+				<form action="Registrationform.inc.php" method="POST">
 
 					Username : <input type="text" name="username" value="<?php if (isset($username)) {echo $username;} ?>"><br><br>
 					Password : <input type="password" name="password"><br><br>

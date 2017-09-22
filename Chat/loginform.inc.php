@@ -4,22 +4,23 @@ include 'core.inc.php';
 
 if(isset($_POST['username']) && isset($_POST['password']))
 {
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = mysqli_real_escape_string($var,$_POST['username']);
+	$password = mysqli_real_escape_string($var,$_POST['password']);
 
 	if( !empty($username) && !empty($password))
 	{
-		$query = "SELECT `id` FROM `user_data` WHERE `user_name` = '$username' && `password` = '$password'";
-		if($query_run = mysql_query($query))
+		$query = "SELECT `id` FROM `users`.`user_data` WHERE `user_name` = '$username' && `password` = '$password'";
+		if($query_run = mysqli_query($var,$query))
 		{
-			$query_num_rows = mysql_num_rows($query_run);
+			$query_num_rows = mysqli_num_rows($query_run);
 			if($query_num_rows == 0)
 			{
 				$error_msg1 = 'Invalid username or password';
 			}
 			else if($query_num_rows == 1)
 			{
-				$user_id = mysql_result($query_run, 0, 'id');
+				$row = mysqli_fetch_row($query_run);
+				$user_id = $row[0];
 				$_SESSION['user_id'] = $user_id;
 				header('Location: index.php');
 			}
