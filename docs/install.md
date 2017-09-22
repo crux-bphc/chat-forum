@@ -6,10 +6,10 @@ This forum lets you to keep your views on certain topics, create your own ones o
 > ## Install Guide
 ---
 >> ### Server Installation
-- __[Download](http://www.wampserver.com/en/) **WAMP** for Windows.
-- __[Download](https://www.mamp.info/en/downloads/) **MAMP** for Mac OS X.
+- [Download](http://www.wampserver.com/en/) **WAMP** for Windows.
+- [Download](https://www.mamp.info/en/downloads/) **MAMP** for Mac OS X.
 *OR*
-- __[Download](https://www.apachefriends.org/download.html) **XAMPP**. This server works on both Windows and MAC.
+- [Download](https://www.apachefriends.org/download.html) **XAMPP**. This server works on both Windows and MAC.
 - Install them through the wizard.
 
 >> ### Files Setup

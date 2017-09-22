@@ -1,0 +1,30 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+#message_box
+{
+	padding:1%;
+	height:70%;
+	width:100%;
+	border:solid black 1px;
+	overflow-y:scroll;
+	overflow-x:scroll;
+}
+#username
+{
+	margin-top:6%;
+}
+.form
+{
+	width:87%;
+	margin-top:3%;
+	padding:0.5%;
+}
+#logout
+{
+	color:black;
+	border:solid black 1px;
+	padding:1%;
+}

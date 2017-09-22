@@ -14,6 +14,7 @@ $Max_id = $rows['Maxa_id']+1;
 else {
 $Max_id = 1;
 }
+
  
 // get values that sent from form 
 $a_name=$_POST['a_name'];
@@ -34,6 +35,7 @@ echo "<a href='view_topic.php?id=".$id."'>View your answer</a>";
 $tbl_name2="fquestions";
 $sql3="UPDATE $tbl_name2 SET reply='$Max_id' WHERE id='$id'";
 $result3=mysql_query($sql3);
+  
 }
 else {
 echo "ERROR";
